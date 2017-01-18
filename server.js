@@ -20,7 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //using public folder
 app.use(express.static('./public'));
 
-app.get('*', function(){
+app.get('/', function(){
 	res.sendFile(__dirname + '/public/index.html');
 })
 
