@@ -11,7 +11,8 @@
   "background": {
     "scripts": [
       "scripts/chromereload.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/jquery.js"
     ]
   },
   "permissions": [
@@ -48,7 +49,8 @@
         "https://*/*"
       ],
       "js": [
-        "scripts/contentscript.js"
+        "scripts/contentscript.js",
+        "scripts/jquery.js"
       ],
       "run_at": "document_end",
       "all_frames": false
