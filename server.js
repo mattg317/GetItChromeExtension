@@ -28,6 +28,15 @@ app.post("/api", function(req, res){
 	console.log(req.body)
 })
 
+//CHeerio==============================================
+var request = require("request");
+var cheerio = require("cheerio");
+
+console.log("\n******************************************\n" +
+            "Grabbing every article headline and link\n" +
+            ":" +
+            "\n******************************************\n");
+
 
 //Set server to listen
 app.listen(PORT, function(){
