@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 
 //Express app
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT;
 
 //Morgan
 app.use(logger("dev"));
