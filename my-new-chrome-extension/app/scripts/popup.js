@@ -12,7 +12,7 @@ chrome.tabs.getSelected(function(tab){
     }
 );
 
-chrome.history.search({text: '', maxResults: 100}, function(data) {
+chrome.history.search({text: '', maxResults: 1000}, function(data) {
     data.forEach(function(page) {
         console.log("history " + page.url);
     });
