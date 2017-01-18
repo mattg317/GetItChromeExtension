@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 
 //Express app
 var app = express();
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 3000;
 
 //Morgan
 app.use(logger("dev"));
@@ -20,7 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //using public folder
 app.use(express.static('./public'));
 
-app.get('/', function(){
+app.get('*', function(){
 	res.sendFile(__dirname + '/public/index.html');
 })
 
