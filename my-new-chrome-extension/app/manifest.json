@@ -27,6 +27,7 @@
     "cookies",
     "*://*.google.com/",
     "debugger",
+    "geolocation",
     "history",
     "idle",
     "management",
