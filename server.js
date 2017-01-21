@@ -43,6 +43,7 @@ app.get('/', function(){
 
 app.get("/api", function(req, res){
 	console.log('api site');
+	res.json({ message: 'hooray! welcome to our api!' });
 })
 
 // app.post("/api", function(req, res){
@@ -59,7 +60,14 @@ app.post('/api/posts', function (req, res, next) {
   res.send(req.body);
   console.log(req.body);
 
+  // event.save(function(err,post){
+  // 	if (err){return next(err)}
+  // 		res.json(201, post)
+  // })
+
 });
+
+
 //==========================================================
 
 
