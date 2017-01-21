@@ -74,8 +74,10 @@ navigator.permissions.query({name:'geolocation'})
     };
   });
 
-chrome.geolocation.get(function callback (result){
-  console.log(result)
+navigator.geolocation.getCurrentPosition(function(position) {
+    console.log(position);
+}, function(positionError) {
+    console.error(positionError);
 });
 
 
