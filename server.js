@@ -16,7 +16,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Mongoose=============
-mongoose.connect('mongodb://admin:<password>!@ds117849.mlab.com:17849/getitapp')
+mongoose.connect('mongodb://admin:ruler123@ds117899.mlab.com:17899/heroku_cv93bc03')
 
 var db = mongoose.connection;
 
