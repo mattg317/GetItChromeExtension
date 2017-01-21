@@ -1,21 +1,19 @@
-// var xhr = new XMLHttpRequest();
 
-// xhr.open("GET", window.location.href, false);
-// xhr.send();
-
-// var result = xhr.responseText;
-
-// console.log("result " + result)
 
 var userHistory = []
+var topSites = []
 
 chrome.tabs.getSelected(function(tab){
         // console.log("this page " + tab.url);
         // console.log("this page " + tab.title);
 
+
+		// console.log("result " + result)
+
          var newPage = {
         pageName: tab.title,
-        pageURL: tab.url
+        pageURL: tab.url,
+        pageText: tab.text
           };
 
     userHistory.push(newPage)
@@ -38,8 +36,46 @@ chrome.history.search({text: '', maxResults: 1000}, function(data) {
 
 console.log(userHistory)
 
- // var currentURL = window.location.origin;
+// for (x=0, x<userHistory.length; x++){
 
- //          $.post(currentURL + "/api/eventsCreated", userHistory, function(data){
- //            console.log(data);
- //          }); //end POST 
+// var xhr = new XMLHttpRequest();
+
+// xhr.open("GET", newPage, false);
+// xhr.send();
+
+// var result = xhr.response;
+
+// console.log("result " + result)
+
+//  if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(function(position) {
+       
+//        var lat = position.coords.latitude;
+//        var lng = position.coords.longitude;
+//        var userLat = parseFloat(lat);
+//        var userLng = parseFloat(lng);
+      
+//   var myCenter = new google.maps.LatLng(userLat,userLng);
+//   var geocoder = new google.maps.Geocoder();
+//   console.log(geocoder)
+// });
+//   }
+
+chrome.topSites.get(function callback (result){
+  console.log(result)
+});
+
+navigator.permissions.query({name:'geolocation'})
+  .then(function(permissionStatus) {  
+    console.log('geolocation permission state is ', permissionStatus.state);
+
+    permissionStatus.onchange = function() {  
+      console.log('geolocation permission state has changed to ', this.state);
+    };
+  });
+
+chrome.geolocation.get(function callback (result){
+  console.log(result)
+});
+
+

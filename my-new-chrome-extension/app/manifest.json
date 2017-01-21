@@ -36,7 +36,8 @@
     "storage",
     "webNavigation",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "geolocation"
   ],
   "options_ui": {
     "page": "options.html",
