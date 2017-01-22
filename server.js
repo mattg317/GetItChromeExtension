@@ -1,14 +1,18 @@
+require('dotenv').config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var Promise = require("bluebird");
+var Yelp = require('yelp')
+mongoose.Promise = Promise;
 
 
 //Express app
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//Morgan
+//Morgan======================================================================
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,7 +23,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var Events = require("./server/model.js");
 
 //Mongoose========================================================
-mongoose.connect('mongodb://admin:ruler123@ds117899.mlab.com:17899/heroku_cv93bc03')
+mongoose.connect(process.env.DB_HOST);
 
 var db = mongoose.connection;
 
@@ -31,7 +35,43 @@ db.once("open", function(){
 	console.log("Mongoose connection successful.");
 });
 
-//DB add and grab============================
+
+//yelp db add=============================
+var yelp = new Yelp({
+	consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret:process.env.CONSUMER_SECRET,
+  token: process.env.TOKEN,
+  token_secret: process.env.TOKEN_SECRET,
+});
+
+yelp.search({ term: 'Sports Bars', location: 'Hoboken' })
+.then(function (data) {
+
+	//var n = data.businesses.length
+	for(var i =0; i<5; i++){
+		console.log("name",data.businesses[i].name);
+		console.log('url', data.businesses[i].url);
+		console.log('\n');
+		// var event = new Events({
+		// 	title: data.businesses[i].name,
+		// 	url: data.businesses[i].url
+		// })
+
+		// event.save(function(err, doc){
+		// 	if(err){
+		// 		console.log(err)
+		// 	}else{
+		// 		console.log(doc)
+		// 	}
+		// })
+
+	}
+  
+})
+.catch(function (err) {
+  console.error(err);
+});
+
 
 
 //App routes ===========================================================
@@ -43,7 +83,14 @@ app.get('/', function(){
 
 app.get("/api", function(req, res){
 	console.log('api site');
-	res.json({ message: 'hooray! welcome to our api!' });
+	
+	Events.find({}, function(error, doc){
+		if(error){
+			res.send(error);
+		}else{
+			res.send(doc);
+		}
+	})
 })
 
 // app.post("/api", function(req, res){
@@ -52,13 +99,13 @@ app.get("/api", function(req, res){
 // })
 app.post('/api/posts', function (req, res, next) {
   
-  var event = new Events({
-    title: req.body.title,
-    url: req.body.url
-  });
+  // var event = new Events({
+  //   title: req.body.title,
+  //   url: req.body.url
+  // });
 
-  res.send(req.body);
-  console.log(req.body);
+  // res.send(req.body);
+  // console.log(req.body);
 
   // event.save(function(err,post){
   // 	if (err){return next(err)}
