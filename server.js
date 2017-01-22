@@ -4,7 +4,8 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var Promise = require("bluebird");
-var Yelp = require('yelp')
+var Yelp = require('yelp');
+var request = require('request');
 mongoose.Promise = Promise;
 
 
@@ -21,6 +22,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Models=====================================================
 var Events = require("./server/model.js");
+var Sports = require("./server/sports.js");
+var Concert = require("./server/concerts.js");
 
 //Mongoose========================================================
 mongoose.connect(process.env.DB_HOST);
@@ -73,6 +76,36 @@ yelp.search({ term: 'Sports Bars', location: 'Hoboken' })
 });
 
 
+//var clientID = process.env.SEAT_CLIENT_ID;
+//Seat Geek=========================================
+// request('https://api.seatgeek.com/2/events?q=NYC&client_id='+ clientID, function(error, response, body){
+// 	if(!error && response.statusCode == 200){
+// 		body = JSON.parse(body)
+		
+// 		for(var i = 0; i<5; i++){
+// 			// console.log("Title: ",body.events[i].title)
+// 			// console.log("Url: ",body.events[i].url)
+// 			// console.log('Venue: ', body.events[i].venue.name)
+
+// 			var concert = new Concert({
+// 				concertNumber: i,
+// 				title: body.events[i].title,
+// 				url: body.events[i].url,
+// 				venue: body.events[i].venue.name
+// 			});
+
+// 			concert.save(function(err,doc){
+// 				if(err){
+// 					console.log(err);
+// 				}else{
+// 					console.log(doc)
+// 				}
+// 			})
+// 		}
+
+// 	}
+// });
+
 
 //App routes ===========================================================
 app.use(express.static(process.cwd() + '/public'));
@@ -81,8 +114,8 @@ app.get('/', function(){
 	res.sendFile(__dirname + '/public/index.html');
 })
 
-app.get("/api", function(req, res){
-	console.log('api site');
+app.get("/api/events", function(req, res){
+	console.log('visited events');
 	
 	Events.find({}, function(error, doc){
 		if(error){
@@ -91,12 +124,21 @@ app.get("/api", function(req, res){
 			res.send(doc);
 		}
 	})
-})
+});
 
-// app.post("/api", function(req, res){
-// 	console.log(req.body)
+app.get("/api/concerts", function(req, res){
+	console.log("Visited Concerts")
 
-// })
+	Concert.find({}, function(error, doc){
+		if(error){
+			res.send(error);
+		}else{
+			res.send(doc)
+		}
+	})
+});
+
+
 app.post('/api/posts', function (req, res, next) {
   
   // var event = new Events({
