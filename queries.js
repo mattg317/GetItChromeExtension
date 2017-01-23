@@ -13,6 +13,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 var clientID = process.env.SEAT_CLIENT_ID;
+
 request('https://api.seatgeek.com/2/events?q=NYC&client_id='+ clientID, function(error, response, body){
 	if(!error && response.statusCode == 200){
 		body = JSON.parse(body)
