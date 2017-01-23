@@ -40,6 +40,7 @@ db.once("open", function(){
 
 
 //yelp db add=============================
+/*
 var yelp = new Yelp({
 	consumer_key: process.env.CONSUMER_KEY,
   consumer_secret:process.env.CONSUMER_SECRET,
@@ -74,6 +75,7 @@ yelp.search({ term: 'Sports Bars', location: 'Hoboken' })
 .catch(function (err) {
   console.error(err);
 });
+*/
 
 
 //var clientID = process.env.SEAT_CLIENT_ID;
@@ -110,8 +112,13 @@ yelp.search({ term: 'Sports Bars', location: 'Hoboken' })
 //App routes ===========================================================
 app.use(express.static(process.cwd() + '/public'));
 
+// app.get('/', function(){
+// 	res.sendFile(__dirname + '/public/index.html');
+// })
+
 app.get('/', function(){
-	res.sendFile(__dirname + '/public/index.html');
+	res.sendFile(__dirname + '/public/popup.html');
+	console.log('popup sent');
 })
 
 app.get("/api/events", function(req, res){
