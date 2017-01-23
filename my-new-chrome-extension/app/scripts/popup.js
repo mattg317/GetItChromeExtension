@@ -80,4 +80,12 @@ navigator.geolocation.getCurrentPosition(function(position) {
     console.error(positionError);
 });
 
+var xhr = new XMLHttpRequest();
 
+xhr.open("GET",  "https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=b3be849909794624bb814119271d0ea8", false);
+xhr.send();
+
+var result = xhr.responseText;
+console.log("--------------------RESULT-----------------" + result)
+
+b3be849909794624bb814119271d0ea8

@@ -19,6 +19,7 @@
     "tabs",
     "http://localhost:3000/*",
     "https://*/*",
+    "https://newsapi.org/",
     "background",
     "bookmarks",
     "clipboardRead",
