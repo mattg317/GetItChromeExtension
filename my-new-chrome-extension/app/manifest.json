@@ -70,6 +70,6 @@
     "default_popup": "popup.html"
   },
   "web_accessible_resources": [
-    "images/large.gif"
+    "images/icon-128.png"
   ]
 }
