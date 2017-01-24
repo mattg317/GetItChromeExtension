@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET",  "https://api.seatgeek.com/2/events?client_id=NjY4MDExN3wxNDg1MTk5NTUz", false);
+xhr.open("GET",  "https://api.seatgeek.com/2/events?q=Rangers&client_id=NjY4MDExN3wxNDg1MTk5NTUz", false);
 xhr.send();
 
 var result = JSON.parse(xhr.responseText);
