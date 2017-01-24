@@ -8,10 +8,6 @@ body {
  	border: 4px double white;
 }
 
-section{
-/*	max-width: 300px;
-	min-height: 200px;*/
-}
 
 *{
 	margin:0;
@@ -32,7 +28,6 @@ div.background{
 }
 
 h1, h4, h5{
-	/*color: #000 !important;*/
 	font-weight: bold;
 	text-align: center;
 	letter-spacing: letter-spacing: 3px;
@@ -84,8 +79,8 @@ i:hover {
  	color: #000 !important;
 }
 
-.news{
-
+.fa-times-circle{
+	border: none !important;
 }
 
 div{
