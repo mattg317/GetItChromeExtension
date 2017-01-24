@@ -40,7 +40,7 @@ for(var i=0; i<5; i++){
 		console.log(div.id)
 		var a = document.createElement('a');
 			a.appendChild(u);
-			a.href = u;
+			a.setAttribute('href', u);
 			console.log(u)
 			console.log(a.href)
 		//para.appendChild(t);
@@ -50,6 +50,10 @@ for(var i=0; i<5; i++){
 		 
 	                                 // Append the text to <p>
 		document.getElementById("news").appendChild(div);
+
+		 div.click(function() {
+      chrome.tabs.create({url: u});
+    });
 };
 
 // function parseURL(url) {
