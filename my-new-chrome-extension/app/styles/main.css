@@ -53,5 +53,9 @@ h4{
 }
 
 section, .icons{
-	border-top: 4px double white;
+
+}
+
+a{
+	color: #000 !important;
 }
