@@ -8,7 +8,6 @@ body {
  	border: 4px double white;
 }
 
-
 *{
 	margin:0;
 	padding:0;
@@ -39,11 +38,6 @@ h4{
 	font-size: 14px !important;
 }
 
-/*.input-field input[type=search] {
-	border-radius: 50%;
-	background-color: #000;
-}*/
-
 i {
 	color: #fff;
 	padding: 3px;
@@ -53,6 +47,8 @@ i {
 p {
 	color: white;
 	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Comfortaa', cursive;
+
 	font-size: 12px;
 	max-width: 300px;
 }
@@ -60,25 +56,15 @@ a{
 	color: #000 !important;
 }
 
-div.collapsible-header, .collapsible{
-	border: none !important;
-	background-color: #000;
-}
-
 i:hover { 
   border: 1px solid #fff; 
 } 
 
-.options {
-  	margin: auto;
-	width: 100%;
-	height: 100%;
-	min-height: 300px;
-	font-family: 'Poiret One', cursive;
-	background-color: #fff;
- 	color: #000 !important;
-}
-
 .fa-times-circle{
 	border: none !important;
+}
+
+i, .icons, .fa-newspaper-o, .name, a, .fa{
+	border: none !important;
+	text-shadow: none !important;
 }
