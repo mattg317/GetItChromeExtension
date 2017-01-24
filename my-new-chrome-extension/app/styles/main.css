@@ -64,10 +64,10 @@ i:hover {
 	border: none !important;
 }
 
-i, .icons, .fa-newspaper-o, .name, a, .fa{
+/*i, .icons, .fa-newspaper-o, .name, a, .fa{
 	border: none !important;
 	text-shadow: none !important;
-}
+}*/
 
 div{
 	color: white;
