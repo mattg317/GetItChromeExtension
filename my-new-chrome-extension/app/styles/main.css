@@ -41,14 +41,15 @@ h4{
 i {
 	color: #fff;
 	padding: 3px;
+	width: 33px;
 	background-color: transparent;
+	text-align: center;
 }
 
 p {
 	color: white;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-family: 'Comfortaa', cursive;
-
 	font-size: 12px;
 	max-width: 300px;
 }
