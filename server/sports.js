@@ -3,7 +3,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var SportSchema = new Schema({
-	titel:{
+	eventNumber:{
+		type: Number
+	},
+	title:{
 		type: String
 	},
 	url:{
