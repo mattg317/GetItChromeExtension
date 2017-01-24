@@ -36,9 +36,13 @@ for(var i=0; i<5; i++){
 		var t = document.createTextNode(JSON.stringify(result.articles[i].title, null, 4));
 		var u = document.createTextNode(JSON.stringify(result.articles[i].url, null, 4));
 		var div = document.createElement('div');
+		div.id="divID" + [i];
+		console.log(div.id)
 		var a = document.createElement('a');
 			a.appendChild(u);
 			a.href = u;
+			console.log(u)
+			console.log(a.href)
 		//para.appendChild(t);
 		//para.appendChild(u);    
 		div.appendChild(t)
