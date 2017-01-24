@@ -35,6 +35,7 @@ for(var i=0; i<5; i++){
 		//var t = document.createTextNode(JSON.stringify(result, null, 4));
 		var t = document.createTextNode(JSON.stringify(result[i].title, null, 4));
 		var u = document.createTextNode(JSON.stringify(result[i].url, null, 4));
+		console.log("u " + u)
 		var div = document.createElement('div');
 		var a = document.createElement('a');
 			a.appendChild(u);
