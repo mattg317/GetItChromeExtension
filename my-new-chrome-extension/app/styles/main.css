@@ -5,23 +5,12 @@ body {
 	min-height: 300px;
 	font-family: 'Poiret One', cursive;
 	background-color: #000;
-	color: #000;
  	border: 4px double white;
 }
 
 section{
 /*	max-width: 300px;
 	min-height: 200px;*/
-}
-
-.options {
-  	margin: auto;
-	width: 100%;
-	height: 100%;
-	min-height: 300px;
-	font-family: 'Poiret One', cursive;
-	background-color: #fff;
- 	color: #000 !important;
 }
 
 *{
@@ -37,7 +26,7 @@ div.background{
 	min-width: 300px;
 	min-height: 200px;
 	height: 100%;
-	text-shadow: 1px 1px 1px white;
+	/*text-shadow: 1px 1px 1px white;*/
 	color: #000 !important;
 	border-bottom: 4px double white;
 }
@@ -48,25 +37,29 @@ h1, h4, h5{
 	text-align: center;
 	letter-spacing: letter-spacing: 3px;
 	text-transform: uppercase;
- 	text-shadow: 1px 1px .5px white;
+	color: #fff
+ /*	text-shadow: 1px 1px .5px white;*/
 }
 h4{
 	font-size: 14px !important;
 }
 
-.input-field input[type=search] {
+/*.input-field input[type=search] {
 	border-radius: 50%;
 	background-color: #000;
-}
+}*/
 
 i {
 	color: #fff;
+	padding: 3px;
+	background-color: transparent;
 }
 
 p {
 	color: white;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 12px;
+	max-width: 300px;
 }
 a{
 	color: #000 !important;
@@ -75,4 +68,22 @@ a{
 div.collapsible-header, .collapsible{
 	border: none !important;
 	background-color: #000;
+}
+
+i:hover { 
+  border: 1px solid #fff; 
+} 
+
+.options {
+  	margin: auto;
+	width: 100%;
+	height: 100%;
+	min-height: 300px;
+	font-family: 'Poiret One', cursive;
+	background-color: #fff;
+ 	color: #000 !important;
+}
+
+.news{
+
 }
