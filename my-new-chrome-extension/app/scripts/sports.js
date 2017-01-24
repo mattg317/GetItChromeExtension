@@ -15,3 +15,9 @@ var t = document.createTextNode(JSON.stringify(result, null, 4));
 
 para.appendChild(t);                                          // Append the text to <p>
 document.getElementById("sports").appendChild(para);
+
+// navigator.geolocation.getCurrentPosition(function(position) {
+//     console.log(position);
+// }, function(positionError) {
+//     console.error(positionError);
+// });
