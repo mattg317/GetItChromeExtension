@@ -8,24 +8,6 @@ var request = require('request');
 //mongoose schema used====================
 var Sports = require('../server/sports.js')
 
-//Mongoose========================================================
-
-var mongoose = require("mongoose");
-var Promise = require("bluebird");
-var request = require('request');
-mongoose.Promise = Promise;
-mongoose.connect(process.env.DB_HOST);
-
-var db = mongoose.connection;
-
-db.on('error', function(err){
-	console.log(("Mongoose Error: ", err))
-})
-
-db.once("open", function(){
-	console.log("Mongoose connection successful.");
-});
-
 //Morgan======================================================================
 app.use(logger("dev"));
 app.use(bodyParser.json());
