@@ -5,10 +5,13 @@ body {
 	min-height: 300px;
 	font-family: 'Poiret One', cursive;
 	background-color: #000;
- 	color: #000 !important;
- 	text-transform: uppercase;
- 	text-shadow: 1px 1px .5px white;
+	color: #000;
  	border: 4px double white;
+}
+
+section{
+/*	max-width: 300px;
+	min-height: 200px;*/
 }
 
 .options {
@@ -33,7 +36,9 @@ div.background{
 	background-position: center;
 	min-width: 300px;
 	min-height: 200px;
+	height: 100%;
 	text-shadow: 1px 1px 1px white;
+	color: #000 !important;
 	border-bottom: 4px double white;
 }
 
@@ -42,6 +47,8 @@ h1, h4, h5{
 	font-weight: bold;
 	text-align: center;
 	letter-spacing: letter-spacing: 3px;
+	text-transform: uppercase;
+ 	text-shadow: 1px 1px .5px white;
 }
 h4{
 	font-size: 14px !important;
@@ -52,10 +59,20 @@ h4{
 	background-color: #000;
 }
 
-section, .icons{
-
+i {
+	color: #fff;
 }
 
+p {
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 12px;
+}
 a{
 	color: #000 !important;
+}
+
+div.collapsible-header, .collapsible{
+	border: none !important;
+	background-color: #000;
 }
