@@ -3,10 +3,14 @@ var xhr = new XMLHttpRequest();
 xhr.open("GET",  "https://getitchrome.herokuapp.com/api/concerts", false);
 xhr.send();
 
-var result = xhr.responseText;
+var result = JSON.parse(xhr.responseText);
+ument.getElementById("news").appendChild(a);
+
+
 
 // for (x=0;x<result.articles)
-console.log("--------------------RESULT-----------------" + result)
+console.log("--------------------RESULT-----------------" + result[0].title);
+console.log("--------------------RESULT-----------------" + result[0].url)
 
 var para = document.createElement("P"); 
 
