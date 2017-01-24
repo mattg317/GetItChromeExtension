@@ -1,0 +1,11 @@
+body {
+ /* 	margin: auto !important;*/
+	font-family: 'Poiret One', cursive;
+	background-color: #fff;
+ 	color: #000 !important;
+ 	text-transform: uppercase;
+ 	border: 4px double #000;
+ 	text-align: center;
+ 	overflow: hidden;
+ 	min-height: 300px;
+}
